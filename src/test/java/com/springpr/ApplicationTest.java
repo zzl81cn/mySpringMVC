@@ -1,6 +1,7 @@
 package com.springpr;
 
 import com.springpr.service.Cinema;
+import com.springpr.service.DefaultMovieService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,8 +9,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import static org.junit.Assert.assertNull;
-
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertThat;
 
 /**
  * Created by zhouzilong on 2016/7/13.
@@ -19,4 +20,26 @@ import static org.junit.Assert.assertNull;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 public class ApplicationTest {
+    @Autowired
+    private ApplicationContext applicationContext;
+
+    @Autowired
+    private Cinema cinema;
+
+    @Test
+    public void shouldGetCinemaInstance(){
+        Cinema cinema = applicationContext.getBean(Cinema.class);
+        assertNotNull(cinema);
+    }
+
+    @Test
+    public void shouldGetAutowiredCinema(){
+        assertNotNull(cinema);
+    }
+//
+    @Test
+    public void shouldGetMovieServiceInstance(){
+        assertNotNull(cinema.getMovieService());
+        assertThat(cinema.getMovieService, instanceOf(DefaultMovieService.class));
+    }
 }
