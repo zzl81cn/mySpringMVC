@@ -1,0 +1,22 @@
+package com.springpr;
+
+import com.springpr.service.Cinema;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import static org.junit.Assert.assertNull;
+
+
+/**
+ * Created by zhouzilong on 2016/7/13.
+ * 在本例中ApplicationTest有两个注解。@RunWith(SpringJUnit4ClassRunner.class).是Spring TestContext 框架提供的一个自定义的JUnit runner，这样在测试类中就可以获取ApplicationContext，甚至直接进行依赖注入，使用事务控制测试方法执行等。声明了@RunWith(SpringJUnit4ClassRunner.class)以后一般还要声明@ContextConfiguration注解。这个注解是用于告诉测试类本项目中的Spring配置。这里我们传入Application.class类，因为这个类中配置了Spring的bean。
+
+ 然后就可以在测试类中使用强大的@Autowired功能了。我们写了三个测试方法，第一个是通过Autowired功能拿到ApplicationContext，第二个是通过Autowired功能直接拿到cinema，第三个则是验证Cinema中的MovieService是被正确注入了的。
+ */
+@RunWith(SpringJUnit4ClassRunner.class)
+public class ApplicationTest {
+}
