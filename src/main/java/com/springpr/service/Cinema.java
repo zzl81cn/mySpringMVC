@@ -3,6 +3,8 @@ package com.springpr.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
+
 /**
  * Created by zhouzilong on 2016/7/13.
  * 本例子中主要使用Annotation功能来实现对MoviceService的注入。
@@ -12,7 +14,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class Cinema {
 
-    @Autowired
+//    @Autowired
+    @Resource
     private MovieService movieService;
 
     public void printMovieName(){
