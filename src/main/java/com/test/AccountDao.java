@@ -14,10 +14,10 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 public class AccountDao {
 //    @Test
 //    public void testGetUser() throws Exception {
-//        InputStream in = this.getClass().getClassLoader().getResourceAsStream("mybatiscfg.xml");
+//        InputStream in = this.getClass().getClassLoader().getResourceAsStream("mybatis.xml");
 //    }
     public static void main(String[] args) {
-        String resources = "com/mapper/mybatiscfg.xml";
+        String resources = "mybatis.xml";
         Reader reader = null;
         SqlSession session;
 
