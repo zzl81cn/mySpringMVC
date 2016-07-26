@@ -5,7 +5,7 @@
 
 <!--CREATE TABLE `User` ( `id` INT(10) NOT NULL AUTO_INCREMENT, `username` VARCHAR(20) NOT NULL, `passWord` VARCHAR(20) NOT NULL, PRIMARY KEY (`id`) ); -->
 <!--INSERT INTO USER(USERNAME,PASSWORD) VALUES('zzl','zzl81cn'); -->
-
+<!--UPDATE USER SET PASSWORD=666 WHERE id=2;-->
 <mapper namespace="com.mapper">
     <select id="getAccountById" parameterType="int" resultType="com.book.pojo.Account">
         SELECT * FROM USER WHERE id = #{id}
