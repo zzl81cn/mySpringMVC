@@ -18,6 +18,6 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="mapper/AccountMapper"/>
+        <mapper resource="com/mapper/AccountMapper"/>
     </mappers>
 </configuration>
