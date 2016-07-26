@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--CREATE TABLE `User` ( `id` INT(10) NOT NULL AUTO_INCREMENT, `username` VARCHAR(20) NOT NULL, `passWord` VARCHAR(20) NOT NULL, PRIMARY KEY (`id`) ); -->
+<!--INSERT INTO USER(USERNAME,PASSWORD) VALUES('zzl','zzl81cn'); -->
+
+<mapper namespace="com.mapper">
+    <select id="getAccountById" parameterType="int" resultType="com.book.pojo.Account">
+        SELECT * FROM USER WHERE id = #{id}
+    </select>
+</mapper>
